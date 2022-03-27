@@ -1,0 +1,15 @@
+/mnt/data/Misha/Projects/csharp/Game/Main/obj/Debug/net6.0/Main.csproj.AssemblyReference.cache
+/mnt/data/Misha/Projects/csharp/Game/Main/obj/Debug/net6.0/Main.GeneratedMSBuildEditorConfig.editorconfig
+/mnt/data/Misha/Projects/csharp/Game/Main/obj/Debug/net6.0/Main.AssemblyInfoInputs.cache
+/mnt/data/Misha/Projects/csharp/Game/Main/obj/Debug/net6.0/Main.AssemblyInfo.cs
+/mnt/data/Misha/Projects/csharp/Game/Main/obj/Debug/net6.0/Main.csproj.CoreCompileInputs.cache
+/mnt/data/Misha/Projects/csharp/Game/Main/bin/Debug/net6.0/Main
+/mnt/data/Misha/Projects/csharp/Game/Main/bin/Debug/net6.0/Main.deps.json
+/mnt/data/Misha/Projects/csharp/Game/Main/bin/Debug/net6.0/Main.runtimeconfig.json
+/mnt/data/Misha/Projects/csharp/Game/Main/bin/Debug/net6.0/Main.dll
+/mnt/data/Misha/Projects/csharp/Game/Main/bin/Debug/net6.0/Main.pdb
+/mnt/data/Misha/Projects/csharp/Game/Main/obj/Debug/net6.0/Main.dll
+/mnt/data/Misha/Projects/csharp/Game/Main/obj/Debug/net6.0/refint/Main.dll
+/mnt/data/Misha/Projects/csharp/Game/Main/obj/Debug/net6.0/Main.pdb
+/mnt/data/Misha/Projects/csharp/Game/Main/obj/Debug/net6.0/Main.genruntimeconfig.cache
+/mnt/data/Misha/Projects/csharp/Game/Main/obj/Debug/net6.0/ref/Main.dll
