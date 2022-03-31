@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "G4J9CQJFeqp8ZRBLy0o7599fCQwSyxu5hDx2A3I3PukhFaWfu0yLjaiz/u/LRjLCb3CFlstiJ7k7zCTEr0ivmQ==",
+  "dgSpecHash": "ocZSNRndsBY5H8h8RXqx85pg6UmTGuN+ONC0VgRL9ClsT2F6enFMT+WX93yR2nbglSfH4lwo4AJTjzoL0OhXSw==",
   "success": true,
-  "projectFilePath": "/mnt/data/Misha/Projects/csharp/Game/Main/Main.csproj",
+  "projectFilePath": "/mnt/data/Misha/Projects/csharp/Game/Data/Data.csproj",
   "expectedPackageFiles": [
     "/home/misha/.nuget/packages/azure.core/1.6.0/azure.core.1.6.0.nupkg.sha512",
     "/home/misha/.nuget/packages/azure.identity/1.3.0/azure.identity.1.3.0.nupkg.sha512",

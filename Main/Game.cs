@@ -1,3 +1,5 @@
+using Data;
+
 namespace Main;
 
 public class Game
@@ -8,6 +10,8 @@ public class Game
     public Field Field { get; }
     public Player Player1 { get; }
     public Player Player2 { get; }
+
+    private Player _currentPlayer;
     
     
     public Game(Field field, int winCount, Player player1, Player player2)
@@ -47,11 +51,39 @@ public class Game
                             Console.SetCursorPosition(position.Left, position.Top + 1);
                         break;
                     case ConsoleKey.Enter:
+                        HandleEnter();
                         break;
                 }
 
                 Console.CursorVisible = true;
             }       
         } while (Console.ReadKey(true).Key != ConsoleKey.Escape);
+    }
+
+    private void HandleEnter()
+    {
+        if(CheckWin())
+            OnGameFinished?.Invoke(this, _currentPlayer);
+        SwitchPlayer();
+    }
+
+    private bool CheckWin()
+    {
+        return false;
+    }
+
+    private void SwitchPlayer()
+    {
+        if (_currentPlayer == Player1)
+        {
+            _currentPlayer = Player2;
+            return;
+        }
+
+        if (_currentPlayer == Player2)
+        {
+            _currentPlayer = Player1;
+            return;
+        }
     }
 }

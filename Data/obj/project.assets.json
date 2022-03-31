@@ -988,21 +988,6 @@
         "runtime": {
           "lib/netstandard2.0/WritableJsonConfiguration.dll": {}
         }
-      },
-      "Data/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v6.0",
-        "dependencies": {
-          "Microsoft.EntityFrameworkCore.SqlServer": "7.0.0-preview.2.22153.1",
-          "Microsoft.Extensions.Configuration.Json": "7.0.0-preview.2.22152.2",
-          "WritableJsonConfiguration": "3.1.9"
-        },
-        "compile": {
-          "bin/placeholder/Data.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Data.dll": {}
-        }
       }
     }
   },
@@ -3377,17 +3362,12 @@
         "writablejsonconfiguration.3.1.9.nupkg.sha512",
         "writablejsonconfiguration.nuspec"
       ]
-    },
-    "Data/1.0.0": {
-      "type": "project",
-      "path": "../Data/Data.csproj",
-      "msbuildProject": "../Data/Data.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
-      "Data >= 1.0.0",
-      "Microsoft.Extensions.Configuration.Abstractions >= 7.0.0-preview.2.22152.2",
+      "Microsoft.EntityFrameworkCore.SqlServer >= 7.0.0-preview.2.22153.1",
+      "Microsoft.Extensions.Configuration.Json >= 7.0.0-preview.2.22152.2",
       "WritableJsonConfiguration >= 3.1.9"
     ]
   },
@@ -3397,11 +3377,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/mnt/data/Misha/Projects/csharp/Game/Main/Main.csproj",
-      "projectName": "Main",
-      "projectPath": "/mnt/data/Misha/Projects/csharp/Game/Main/Main.csproj",
+      "projectUniqueName": "/mnt/data/Misha/Projects/csharp/Game/Data/Data.csproj",
+      "projectName": "Data",
+      "projectPath": "/mnt/data/Misha/Projects/csharp/Game/Data/Data.csproj",
       "packagesPath": "/home/misha/.nuget/packages/",
-      "outputPath": "/mnt/data/Misha/Projects/csharp/Game/Main/obj/",
+      "outputPath": "/mnt/data/Misha/Projects/csharp/Game/Data/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/home/misha/.nuget/NuGet/NuGet.Config"
@@ -3415,11 +3395,7 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "projectReferences": {
-            "/mnt/data/Misha/Projects/csharp/Game/Data/Data.csproj": {
-              "projectPath": "/mnt/data/Misha/Projects/csharp/Game/Data/Data.csproj"
-            }
-          }
+          "projectReferences": {}
         }
       },
       "warningProperties": {
@@ -3432,7 +3408,11 @@
       "net6.0": {
         "targetAlias": "net6.0",
         "dependencies": {
-          "Microsoft.Extensions.Configuration.Abstractions": {
+          "Microsoft.EntityFrameworkCore.SqlServer": {
+            "target": "Package",
+            "version": "[7.0.0-preview.2.22153.1, )"
+          },
+          "Microsoft.Extensions.Configuration.Json": {
             "target": "Package",
             "version": "[7.0.0-preview.2.22152.2, )"
           },
