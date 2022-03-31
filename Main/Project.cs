@@ -89,16 +89,16 @@ public class Project
         while (true)
         {
             Console.WriteLine("Enter name");
-            string name = Console.ReadLine();
+            var name = Console.ReadLine();
             Console.WriteLine("Enter pass");
-            string pass = Console.ReadLine();
+            var pass = Console.ReadLine();
             var player = _playerService.FindByName(name);
             if (player is not null) 
                 return player;
         }
     }
 
-    private Player? RollRegister(int number)
+    private Player RollRegister(int number)
     {
         Console.WriteLine("Register");
         while (true)
@@ -148,7 +148,11 @@ public class Project
     private (Size size, int winCount) GetGameParams()
     {
         var settings = _settingsService.Read();
-        return (settings.FieldSize, settings.WinCount);
+        if (settings.FieldSize is null || settings.WinCount is null)
+        {
+            // Ask field size and WinCount
+        }
+        return (settings.FieldSize.Value, settings.WinCount.Value);
     }
 
 }

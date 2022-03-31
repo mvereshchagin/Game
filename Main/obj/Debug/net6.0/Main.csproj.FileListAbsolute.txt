@@ -75,3 +75,4 @@
 /mnt/data/Misha/Projects/csharp/Game/Main/bin/Debug/net6.0/Data.dll
 /mnt/data/Misha/Projects/csharp/Game/Main/bin/Debug/net6.0/Data.pdb
 /mnt/data/Misha/Projects/csharp/Game/Main/obj/Debug/net6.0/Main.csproj.CopyComplete
+/mnt/data/Misha/Projects/csharp/Game/Main/bin/Debug/net6.0/appsettings.json
