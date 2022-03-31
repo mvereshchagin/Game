@@ -1,9 +1,8 @@
-﻿using System.Drawing;
-using Main;
-using Microsoft.VisualBasic.CompilerServices;
+﻿using Main;
 
 var configuration = new Configuration();
-var project = new Project(configuration.SettingsService,
+var project = new Project(
+    configuration.SettingsService,
     configuration.PlayerService,
     configuration.GameResultService);
 project.Run();

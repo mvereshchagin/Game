@@ -48,43 +48,65 @@ public class Project
     {
         var player = AutoAuthorize(number);
         if (player is null)
+            return RollAuthorizeOrRegister(number);
+        
+        return player;
+    }
+
+    private Player RollAuthorizeOrRegister(int number)
+    {
+        Console.WriteLine("Register (R) or Authorize (A)?");
+        while (true)
         {
-            Console.WriteLine("Register or Authorize?");
             var answer = Console.ReadLine();
             switch (answer)
             {
                 case "A":
-                    _player1 = RollAuthorize(number);
+                    return RollAuthorize(number);
                     break;
                 case "R":
-                    _player1 = RollRegister(number);
+                    return RollRegister(number);
+                    break;
+                default:
+                    Console.WriteLine("Wrong input. Try one more time");
                     break;
             }
         }
-
-        return player;
     }
 
     private Player RollAuthorize(int number)
     {
+        Console.WriteLine("Authorize");
         while (true)
         {
-            string name = "";
+            Console.WriteLine("Enter name");
+            string name = Console.ReadLine();
+            Console.WriteLine("Enter pass");
+            string pass = Console.ReadLine();
             var player = _playerService.FindByName(name);
             if (player is not null) 
                 return player;
         }
     }
 
-    private Player RollRegister(int number)
+    private Player? RollRegister(int number)
     {
+        Console.WriteLine("Register");
         while (true)
         {
-            string name = "";
+            Console.WriteLine("Enter name");
+            string name = Console.ReadLine();
+            Console.WriteLine("Enter pass");
+            string pass = Console.ReadLine();
+            
             var player = _playerService.FindByName(name);
-            if (player is null)
-                player = Register(name, number);
-            return player;
+            if (player is not null)
+            {
+                Console.WriteLine("User exists");
+                continue;
+            }
+            
+            return Register(name, number);
         }
     }
     
