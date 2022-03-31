@@ -1,10 +1,23 @@
+using System.Diagnostics;
 using Data;
 
 namespace Main;
 
 public class Game
 {
-    public event EventHandler<Player>? OnGameFinished; 
+    public event EventHandler<OnGameFinishedEventArgs>? OnGameFinished;
+
+    public class OnGameFinishedEventArgs : EventArgs
+    {
+        public Player WinPlayer { get; }
+        public long Duration { get; }
+
+        public OnGameFinishedEventArgs(Player player, long duration)
+        {
+            WinPlayer = player;
+            Duration = duration;
+        }
+    }
 
     public int WinCount { get; }
     public Field Field { get; }
@@ -24,6 +37,9 @@ public class Game
 
     public void Run()
     {
+        Stopwatch stopWatch = new Stopwatch();
+        stopWatch.Start();
+        
         this.Field.Draw();
         
         // Console.WriteLine("Press ESC to stop");
@@ -52,6 +68,15 @@ public class Game
                         break;
                     case ConsoleKey.Enter:
                         HandleEnter();
+                        if (CheckWin())
+                        {
+                            stopWatch.Stop();
+                            OnGameFinished?.Invoke(this,
+                                new OnGameFinishedEventArgs(player: _currentPlayer, 
+                                    duration: stopWatch.ElapsedMilliseconds));
+                        }
+
+                        SwitchPlayer();
                         break;
                 }
 
@@ -62,9 +87,7 @@ public class Game
 
     private void HandleEnter()
     {
-        if(CheckWin())
-            OnGameFinished?.Invoke(this, _currentPlayer);
-        SwitchPlayer();
+        
     }
 
     private bool CheckWin()

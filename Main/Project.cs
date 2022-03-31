@@ -32,15 +32,24 @@ public class Project
         game.Run();
     }
 
-    private void GameOnOnGameFinished(object? sender, Player e)
+    private void GameOnOnGameFinished(object? sender, Game.OnGameFinishedEventArgs e)
     {
-        SaveResult(sender as Game, e);
+        SaveResult(sender as Game, e.WinPlayer, e.Duration);
     }
 
 
-    private void SaveResult(Game game, Player player)
+    private void SaveResult(Game game, Player player, long duration)
     {
-        var gameResult = new GameResult() {DateCreate = DateTime.Now, Player = player};
+        var gameResult = new GameResult
+        {
+            DateCreate = DateTime.Now, 
+            WinPlayer = player,
+            Player1 = game.Player1,
+            Player2 = game.Player2,
+            FieldSize = game.Field.Size,
+            WinCount = game.WinCount,
+            Duration = duration
+        };
         _gameResultService.Add(gameResult: gameResult);
     }
 

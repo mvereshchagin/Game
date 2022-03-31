@@ -30,4 +30,12 @@ public class GameResultService : IGameResultService
         db.GameResults.Add(gameResult);
         db.SaveChanges();
     }
+
+    public IList<GameResult> GetByPlayerId(int id)
+    {
+        using var db = new GameContext(_connectionString);
+        return (from gameResult in db.GameResults
+            where gameResult.Player1.Id == id || gameResult.Player2.Id == id
+            select gameResult).ToList();
+    }
 }
